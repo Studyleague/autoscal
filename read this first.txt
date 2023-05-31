@@ -1,0 +1,10 @@
+note: 
+
+this project was shiffted from digital ocean.
+the project has a invoice.zip file which contains heavy pdfs and this zip has to be unziped in invoice folder of the root directory.
+
+Rgearding the thecarsdoctor.zip this is the latest zip taken from digital ocean and it's not been unzipped here because the client has aborted their business operations and we don't want to increase the space that's why it's kept in zip format onlly.
+
+Latest backup on github is also take, only thing is that github backup doesn't contain heavy invoices pdf as they were deleted to take the backup
+
+and the latest db tcd is already added in the phpmyadmin of e2e server
