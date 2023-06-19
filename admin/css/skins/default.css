@@ -348,7 +348,7 @@ html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
 }
 
 .body-sign .card-sign .card-title-sign .title {
-	background-color: #FFFFFF;
+	background-color: #fc7303;
 }
 
 .body-sign .card-sign .card-body {
@@ -893,7 +893,7 @@ html .show > .btn-light.dropdown-toggle {
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-	color: #FFFFFF;
+	color: #fc7303;
 }
 
 .pagination > .active > a,

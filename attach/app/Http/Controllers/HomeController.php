@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
-use Auth;
-use Carbon\Carbon;
 use Str;
+use Auth;
 use Crypt;
-use App\Models\VendorService;
+use Carbon\Carbon;
 use App\Models\Review;
+use Illuminate\Http\Request;
+use App\Models\VendorService;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {

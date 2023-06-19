@@ -24,7 +24,7 @@ aside.sidebar .categories ul li a,
 aside.sidebar .recent-post .post h4 a,
 aside.sidebar .tags ul li a,
 .single-blog-page .blog-box .blog-details h3 {
-    color: #B81736;
+    color: #E48260;
 }
 
 /*------------------------------
@@ -51,12 +51,12 @@ aside.sidebar .tags ul li a,
 .faq .accordion .card .card-header h5 .btn.collapsed,
 nav .pagination .page-item.active .page-link,
 aside.sidebar .gray-panel h3:after {
-    background-image: linear-gradient(to right, #2E135D , #B81736);
+    background-image: linear-gradient(to right, #ED4120 , #E48260);
 }
 
 @media (max-width: 992px) {
     .foxapp-header {
-        background-image: linear-gradient(to right, #2E135D , #B81736);
+        background-image: linear-gradient(to right, #ED4120 , #E48260);
     }
 }
 
@@ -77,7 +77,7 @@ footer .subscribe .subscribe-form h4,
 .blog-page .blog-box:hover .blog-details h3 a,
 .single-blog-page .blog-box .post-tag-area ul li a:hover,
 .comments-container .comments-list li .reply:hover {
-    color: #2E135D;
+    color: #ED4120;
 }
 
 .main-features .features-circle:before,
@@ -89,20 +89,21 @@ footer .subscribe .subscribe-form .form-group .form-control,
 aside.sidebar .search .form-group .form-control,
 .single-blog-page .blog-box .blog-details blockquote,
 .comments-form .form-group .form-control {
-    border-color: #2E135D;
+    border-color: #ED4120;
 }
 
 .clients-testimonial .testimonial-slider .item .client-testimonial:after {
-    border-top-color: #2E135D;
+    border-top-color: #ED4120;
 }
 
 .features-circle svg circle {
-    stroke: #2E135D;
+    stroke: #ED4120;
 }
 
 .lity,
 .watch-video .video:before {
-    background: rgb(182 23 54 / 70%);
+    /* background: rgb(182 23 54 / 70%); */
+    background: rgba(241, 194, 176, 0.7);
 }
 
 /*------------------------------
@@ -118,13 +119,13 @@ aside.sidebar .search .form-group .form-control,
 .git-in-touch .form-group .form-control~.focus-border,
 aside.sidebar .search .form-group .form-control~.focus-border,
 .comments-form .form-group .form-control~.focus-border {
-    background: #B81736;
+    background: #E48260;
 }
 .our-team .team-slider .person:hover h3,
 .our-team .team-slider .person ul li a,
 .boxes .box:hover .lnr,
 footer .copyright a:hover {
-    color: #B81736;
+    color: #E48260;
 }
 
 /*------------------------------

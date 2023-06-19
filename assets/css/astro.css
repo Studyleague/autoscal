@@ -1,0 +1,17 @@
+@charset 'UTF-8';
+
+@font-face
+{
+    font-family: 'astro';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 200px;
+
+
+    src: url('../fonts/Astro.ttf');
+    src: url('../fonts/Astro.ttf?#iefix') format('embedded-opentype'), url('../fonts/Astro.ttf') format('truetype');
+}
+
+.astro{
+    font-size: 200px;
+}

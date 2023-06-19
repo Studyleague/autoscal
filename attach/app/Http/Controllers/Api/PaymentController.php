@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Anand\LaravelPaytmWallet\Facades\PaytmWallet;
 use App\Paytm;
-use App\Models\Payment;
-use App\Models\PrePayment;
-use App\Models\Order;
-use App\Models\PreOrder;
 use App\Models\User;
-use DB;
-use Log;
+use App\Models\Order;
+use App\Models\Payment;
+use App\Models\PreOrder;
+use App\Models\PrePayment;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
+use Anand\LaravelPaytmWallet\Facades\PaytmWallet;
 date_default_timezone_set('Asia/Kolkata');
 
 class PaymentController extends Controller
@@ -118,33 +118,38 @@ class PaymentController extends Controller
 
         $porder_conn->save();
 
-        $user_info = User::where('id',$user_id)->first();
-        $email = $user_info->email ?? 'test@gmail.com';
-        $userData = [
-            'user_id' => $user_id, // user_id of user
-            'order_id' => $order_id, // order_id of orders
-            'name' => $seller_name, // Name of user
-            'mobile' => $contact_no, //Mobile number of user
-            'email' => $email, //Email of user
-            'fee' => $total,
-            'orderid' => time().$order_id.'-'.$order_id, //Order id
-            // 'orderid' => $mobile."_".rand(1,1000)."-".$coupon_id."-".$discount."-".$price.'-'.$order_id.'-'.$user_id.'-'.$name.'-'.$mobile.'-'.$email //Order id
-        ];
-
-        $paytmuser = Payment::create($userData); // creates a new database record
-        $paytmuser1 = PrePayment::create($userData); // creates a new database record
-
-        $payment = PaytmWallet::with('receive');
-
-        $payment->prepare([
-            'order' => $userData['orderid'],
-            'user' => $user_id,
-            'mobile_number' => $userData['mobile'],
-            'email' => $userData['email'], // your user email address
-            'amount' => $total, // amount will be paid in INR.
-            'callback_url' => route('status') // callback URL
+        return response()->json([
+            'success' => true,
+            'message' => 'Order placed successfully!'
         ]);
-        return $payment->receive();  // initiate a new payment
+
+        // $user_info = User::where('id',$user_id)->first();
+        // $email = $user_info->email ?? 'test@gmail.com';
+        // $userData = [
+        //     'user_id' => $user_id, // user_id of user
+        //     'order_id' => $order_id, // order_id of orders
+        //     'name' => $seller_name, // Name of user
+        //     'mobile' => $contact_no, //Mobile number of user
+        //     'email' => $email, //Email of user
+        //     'fee' => $total,
+        //     'orderid' => time().$order_id.'-'.$order_id, //Order id
+        //     // 'orderid' => $mobile."_".rand(1,1000)."-".$coupon_id."-".$discount."-".$price.'-'.$order_id.'-'.$user_id.'-'.$name.'-'.$mobile.'-'.$email //Order id
+        // ];
+
+        // $paytmuser = Payment::create($userData); // creates a new database record
+        // $paytmuser1 = PrePayment::create($userData); // creates a new database record
+
+        // $payment = PaytmWallet::with('receive');
+
+        // $payment->prepare([
+        //     'order' => $userData['orderid'],
+        //     'user' => $user_id,
+        //     'mobile_number' => $userData['mobile'],
+        //     'email' => $userData['email'], // your user email address
+        //     'amount' => $total, // amount will be paid in INR.
+        //     'callback_url' => route('status') // callback URL
+        // ]);
+        // return $payment->receive();  // initiate a new payment
     }
 
     public function paymentCallback()
@@ -152,7 +157,6 @@ class PaymentController extends Controller
         $transaction = PaytmWallet::with('receive');
 
         $response = $transaction->response();
-        Log::debug($response);
 
         $order_id = $transaction->getOrderId(); // return a order id
 

@@ -137,12 +137,12 @@
     <div style="clear: both;"></div>
 </header>
 <div class="add-detail mt-10">
-    
+
     <div class="text-left logo w-60">
-        
+
     </div>
     <div class="text-left logo w-40">
-        
+
         <p style="text-align:right;">
             <b>Order No:</b> #<?php echo e($order_no); ?> <br>
             <b>Date:</b> <?php echo e(date("d-m-Y")); ?>
@@ -698,7 +698,7 @@
                 <img src="<?php echo e(asset($vehicle_photos['odometer_view'])); ?>" style="width:250px;height:250px">
             </td>
             <td class="text-center">
-                
+
             </td>
         </tr>
     </table>
@@ -896,7 +896,7 @@
                 <br><br>
             </td>
             <td class="text-center">
-                
+
             </td>
         </tr>
     </table>
@@ -1105,7 +1105,7 @@
                 <br><br>
             </td>
             <td class="text-center">
-                
+
             </td>
         </tr>
     </table>

@@ -47,7 +47,7 @@ Route::get('get_coupons', [CouponController::class, 'index']);
 Route::post('apply_coupon', [CouponController::class, 'apply_coupon']);
 
 // Order
-Route::get('place_order', [PaymentController::class, 'pay'])->name('place_order');
+Route::post('place_order', [PaymentController::class, 'pay'])->name('place_order');
 Route::post('my_orders', [OrderController::class, 'index']);
 Route::post('/payment/status', [PaymentController::class,'paymentCallback'])->name('status');
 
